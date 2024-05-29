@@ -22,13 +22,17 @@ nav a {
 .stories {
     display: flex;
     justify-content: center;
+    flex-wrap: nowrap;
     padding: 1rem;
     background-color: #f5f5f5;
+    overflow-x: auto;
+    gap: 1rem; 
 }
 
 .story {
-    margin: 0 1rem;
+    margin: 0.5rem;
     text-align: center;
+    flex: 0 0 auto; 
 }
 
 .story img {
@@ -51,15 +55,16 @@ nav a {
     margin: 2rem auto;
     max-width: 600px;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .search-bar input[type="text"] {
     padding: 1rem;
-    width: 80%;
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 5px 0 0 5px;
     outline: none;
+    flex: 1;
 }
 
 .search-bar button {
@@ -79,23 +84,25 @@ nav a {
     display: inline-block;
     margin-top: 1rem;
 }
+
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
     padding: 2rem;
 }
+
 .gallery img {
     width: 100%;
     height: auto;
-    border-radius: 5px;
+    transition: transform 0.5s ease-in-out;
 }
+
 .car-info {
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
     padding: 0.5rem;
     text-align: center;
-    border-radius: 5px;
 }
 
 @keyframes ampliar {
@@ -145,4 +152,40 @@ footer .social-icons a:hover {
 
 footer .social-icons i {
     font-size: 24px; /* tamaño de los iconos */
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-bar input[type="text"] {
+        border-radius: 5px 5px 0 0;
+        width: 100%;
+    }
+
+    .search-bar button {
+        border-radius: 0 0 5px 5px;
+        width: 100%;
+        margin-top: -1px; /* alinear el borde */
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        margin: 0.5rem 0;
+    }
+
+    .story {
+        margin: 0.5rem 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
 }
