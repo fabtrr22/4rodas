@@ -20,7 +20,7 @@
 ## Capturas de Pantalla
 
 ![Captura de Pantalla 1](img/inicio.jpg)
-![Captura de Pantalla 2](img/footer.jpg.png)
+![Captura de Pantalla 2](img/footer.jpg)
 
 ## Uso
 
